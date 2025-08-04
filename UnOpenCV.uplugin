@@ -19,6 +19,12 @@
 			"Name": "UnOpenCV",
 			"Type": "Runtime",
 			"LoadingPhase": "PostConfigInit"
+		},
+		{
+			"Name": "TextureUtils",
+			"Type": "Runtime",
+			"LoadingPhase": "PostConfigInit"
 		}
+
 	]
 }

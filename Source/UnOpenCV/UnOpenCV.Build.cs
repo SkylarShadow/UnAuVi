@@ -46,6 +46,7 @@ public class UnOpenCV : ModuleRules
 			new string[]
 			{
 				"Core",
+                "AssetRegistry",
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);

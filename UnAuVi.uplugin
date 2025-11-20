@@ -29,6 +29,11 @@
 			"Name": "TextureUtils",
 			"Type": "Runtime",
 			"LoadingPhase": "PostConfigInit"
-		}
+		},
+		{
+			"Name": "UnFFmpeg",
+			"Type": "Runtime",
+			"LoadingPhase": "PostConfigInit"
+		},
 	]
 }

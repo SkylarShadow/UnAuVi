@@ -9,18 +9,20 @@ public class UnOpenCV : ModuleRules
 	{
 
 #region Load OpenCV
-        string OpenCVIncPath = Path.Combine(ModuleDirectory, "../ThirdParty/OpenCV/include");
-        string OpenCVLibPath = Path.Combine(ModuleDirectory, "../ThirdParty/OpenCV/lib");
-        string OpenCVLibName = "opencv_world4120";
-
-        PublicSystemIncludePaths.Add(OpenCVIncPath);
-        PublicAdditionalLibraries.Add(Path.Combine(OpenCVLibPath, OpenCVLibName + ".lib")); //静态库
-        string OpenCVDLLName = OpenCVLibName + ".dll"; //动态库
-        PublicDelayLoadDLLs.Add(OpenCVDLLName);
-
+        string OpenCVIncPath = Path.Combine(ModuleDirectory, "../../ThirdParty/OpenCV/include");
+        string OpenCVLibPath = Path.Combine(ModuleDirectory, "../../ThirdParty/OpenCV/lib");
         //string PlatformDir = Target.Platform.ToString(); //Windows64系统为"Win64",如果要处理多平台建议还是采用这种方式
-        string BinaryPath = Path.GetFullPath(Path.Combine(ModuleDirectory, "../ThirdParty/OpenCV/bin"));
-        RuntimeDependencies.Add(Path.Combine(BinaryPath, OpenCVDLLName));
+        string BinaryPath = Path.GetFullPath(Path.Combine(ModuleDirectory, "../../ThirdParty/OpenCV/bin"));
+        string OpenCVLibName = "opencv_world4120";
+        string OpenCVDLLName = OpenCVLibName + ".dll"; //动态库
+
+
+        //PublicSystemIncludePaths.Add(OpenCVIncPath);
+        PublicIncludePaths.Add(OpenCVIncPath);
+        PublicAdditionalLibraries.Add(Path.Combine(OpenCVLibPath, OpenCVLibName + ".lib")); //静态库
+        
+        PublicDelayLoadDLLs.Add(OpenCVDLLName);
+        RuntimeDependencies.Add("$(TargetOutputDir)/"+OpenCVDLLName, Path.Combine(BinaryPath, OpenCVDLLName));
 
         PublicDefinitions.Add("WITH_OPENCV=1");
 #endregion

@@ -12,7 +12,7 @@ void FUnOpenCVModule::StartupModule()
 	FString LibraryPath;
 
 #if WITH_OPENCV
-	LibraryPath = FPaths::Combine(*PluginDir, TEXT("Source/ThirdParty/OpenCV/lib/"));
+	LibraryPath = FPaths::Combine(*PluginDir, TEXT("ThirdParty/OpenCV/bin/"));
 	OpenCV_World_Handler = FPlatformProcess::GetDllHandle(*(LibraryPath + TEXT("opencv_world4120.dll"))); //¼ÓÔØOpenCV¾ä±ú
 #endif
 }

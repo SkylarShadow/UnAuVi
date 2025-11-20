@@ -4,6 +4,7 @@
 	{
 		"TextureUtils": "UnrealEditor-TextureUtils-Win64-DebugGame.dll",
 		"UnAuVi": "UnrealEditor-UnAuVi-Win64-DebugGame.dll",
+		"UnFFmpeg": "UnrealEditor-UnFFmpeg-Win64-DebugGame.dll",
 		"UnOpenCV": "UnrealEditor-UnOpenCV-Win64-DebugGame.dll"
 	}
 }
